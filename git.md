@@ -267,5 +267,12 @@
 ```
 	cat ~/.ssh/id_rsa.pub
 ```
-把这些密钥内容复制到你github账号的settng里的SSH andGPGkeys中，成功以后你在本机访问这个账号的仓库就不需要再用账号密码验证了。
+把这些密钥内容复制到你github账号的settng里的SSH andGPGkeys中。
+然后验证一下输入
+```
+	ssh -T git@github.com
+```
+后面让你确认是否重连直接输入yes就可以了，然后就会出现下面这个结果，就说明你成功了
+![截图](file://D:/babysitter/笔记/studyNote/images/image1.png)
+
 
