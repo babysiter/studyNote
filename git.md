@@ -204,6 +204,8 @@
     9. 切换成远程跟踪分支 git checkout use/master
     10. 合并远程跟踪分支 git merge use/master 
     11. git pull  获取数据并合并
+
+
 # 拉取仓库代码
    1. 本地不用创建仓库 直接克隆下来  git clone url
     2. 它自动创建一个别名; 查看别名git remote -v       
@@ -228,13 +230,16 @@
     * git checkout --track 别名/分支名  自动创建本地分支，分知名为远程分支名并且与远程跟踪分支绑定
     * git checkout -b 分支名 别名/分支名 效果与上面一样     
 	* git branch -vv 查看分支是否有远程跟踪分支绑定
+
+
 ## 删除远程分支
     * git push use(别名) --delete (分支名)  删除远程分支
     * git remote prune （别名） --dry-run  列出仍在远程跟踪但是远程分支已经被删除的无用分支
     * git remote rm 别名    清除上面的命令列出来的远程跟踪
-## 冲突
+    
+##冲突
 
-   * git本地操作的冲突
+* git本地操作的冲突
         * 典型合并的时候
   	    * git远程协作的时候
         	* push
@@ -252,3 +257,15 @@
     3. 更改后提交到自己的远程仓库
     4. 使用pull request提交自己修改的代码给项目管理者参考
     5. 管理人审核 然后merge
+
+# 生成ssh公钥
+首先在git 使用下命令
+```
+	ssh-keygen -t rsa -C "你的账号"
+```
+他会帮你生成本机的ssh密钥，然后调用下命令查看生成的密钥内容
+```
+	cat ~/.ssh/id_rsa.pub
+```
+把这些密钥内容复制到你github账号的settng里的SSH andGPGkeys中，成功以后你在本机访问这个账号的仓库就不需要再用账号密码验证了。
+
